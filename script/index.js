@@ -1,0 +1,3 @@
+$('#tab').talc({
+    child: "#content"
+});
