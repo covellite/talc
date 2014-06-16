@@ -1,26 +1,28 @@
-(function ($) {
+;(function ($) {
     'use strict';
 
     $.fn.talc = function (o) {
         var d = {
-            child: '#content'
+            child: '#tabBody',
+            currentClass: '.active'
         },
             fo = $.extend({}, d, o);
 
         return this.each(function () {
-            var parent = this;
+            var parent = this,
+                currentName = fo.currentClass.replace('.', '');
 
             $(this).children()
-                .click(function (e) {
+                .bind('click', function (e) {
                     var num = $(parent).children().index(this);
                     $(parent).children()
-                       　.removeClass('select');
-                   　$(this)
-                      　　.addClass('select');
+                        .removeClass(currentName);
+                    $(this)
+                        .addClass(currentName);
                     $(fo.child).children()
-                        .addClass('hide')
-                        .eq(num).removeClass('hide');
-
+                        .removeClass(currentName)
+                        .eq(num)
+                        .addClass(currentName);
                     e.preventDefault();
                 });
 

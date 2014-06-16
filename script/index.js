@@ -1,3 +1,1 @@
-$('#tab').talc({
-    child: "#content"
-});
+$('#tabList').talc({});

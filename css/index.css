@@ -7,11 +7,11 @@ li {
   list-style: none;
 }
 
-#tab {
+#tabList {
   overflow: hidden;
 }
 
-#tab li {
+#tabList li {
   background: #ccc;
   padding: 5px 25px;
   float: left;
@@ -19,15 +19,16 @@ li {
   cursor: pointer;
 }
 
-#tab li.select {
+#tabList li.active {
   background: #eee;
 }
 
-#content li {
+#tabBody li {
+  display: none;
   background: #eee;
   padding: 20px;
 }
 
-.hide {
-  display: none;
+#tabBody .active {
+  display: block;
 }
